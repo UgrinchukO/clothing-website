@@ -42,14 +42,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-html {
+html{
+
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+body
+{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .app-wrapper-content {
-    display: flex;
-    justify-content: center;
-    /*background-color: violet;*/
     width: 1440px;
-    height: 80px;
     margin: 0 auto;
 }

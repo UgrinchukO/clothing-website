@@ -1,31 +1,11 @@
 .headerElement {
+    border: 1px solid olivedrab;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     width: 1440px;
     height: 80px;
     margin: 0 auto;
-}
-
-categoryClothing {
-    align-items: center;
-    justify-content: center;
-}
-
-.categoryClothing button {
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 120%;
-    align-items: center;
-    text-align: center;
-    margin-left: 32px;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.categoryClothing .firstElement {
-    margin-left: 117px;
 }
 
 .headerElement button {
@@ -33,13 +13,54 @@ categoryClothing {
     background: none;
 }
 
+.categoryClothing a {
+    padding-bottom: 29px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    margin-left: 32px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: rgba(29, 31, 34, 1);
+
+
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: background-size .3s;
+    background-position: 0% 100%;
+}
+
+.categoryClothing a.active {
+    color: rgba(94, 206, 123, 1);
+    background-size: 100% 2px;
+}
+
+.categoryClothing a.firstElement {
+    margin-left: 117px;
+}
+
 .iconReboot {
     position: relative;
-    left: 385px;
+    left: 392px;
     width: 41px;
     height: 41px;
     margin: 30px 0px;
     cursor: pointer;
+}
+
+.rightHeader {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-left: 950px;
 }
 
 .iconDollar {
@@ -50,15 +71,5 @@ categoryClothing {
     font-size: 18px;
     line-height: 160%;
     margin: 28px 0px;
-    left: 950px;
-    cursor: pointer;
-}
-
-.iconBasket img {
-    position: relative;
-    left: 980px;
-    width: 20px;
-    height: 18px;
-    margin: 34px 0px;
     cursor: pointer;
 }

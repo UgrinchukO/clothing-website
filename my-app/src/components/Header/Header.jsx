@@ -1,35 +1,42 @@
 import React from "react";
 import s from "./Header.module.css"
 import headerIconReboot from "./../../Image/headerImage/a-logo.png"
-import headerIconBasket from "./../../Image/headerImage/Vector.png"
-import arrowUP from "./../../Image/headerImage/arrow-up.png"
-import arrowDown from "./../../Image/headerImage/arrow-down.png"
+import DropDown from "../DropDown/DropDown";
+import ModalBasket from "../ModalBasket/ModalBasket";
+import {NavLink} from "react-router-dom";
 
 
-const Header = (props) => {
-    return (
-        <div className={s.headerElement}>
-            <div className={s.categoryClothing}>
-                <button className={s.firstElement}>Women</button>
-                <button>Men</button>
-                <button>Kids</button>
-            </div>
+class Header extends React.Component {
 
-            <button className={s.iconReboot}>
-                <img src={headerIconReboot}/>
-            </button>
+    render() {
+        return (
+            <header className={s.headerElement}>
+                <div className={s.categoryClothing}>
+                    <NavLink to={"/women"} className={s.firstElement} activeClassName={s.active}>Women</NavLink>
+                    {/*<span className={s.line} activeClassName={s.active}></span>*/}
+                </div>
+                <div className={s.categoryClothing}>
+                    <NavLink to={'/men'} activeClassName={s.active}>Men</NavLink>
+                </div>
 
-            <button className={s.iconDollar}>$
-            </button>
-            <button>
-                <img src={s.arrowDown}/>
-            </button>
-            <button className={s.iconBasket}>
-                <img src={headerIconBasket}/>
-            </button>
-        </div>
+                <div className={s.categoryClothing}>
+                    <NavLink to={"/kids"} activeClassName={s.active}>Kids</NavLink>
+                </div>
 
-    )
+                <button className={s.iconReboot}>
+                    <img src={headerIconReboot}/>
+                </button>
+                <div className={s.rightHeader}>
+                    <button className={s.iconDollar}>
+                        $
+                    </button>
+                    <DropDown/>
+                    <ModalBasket/>
+                </div>
+            </header>
+
+        )
+    }
 }
 
 export default Header
