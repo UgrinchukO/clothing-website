@@ -2,33 +2,24 @@ import React, {PureComponent} from "react";
 import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import MainContainer from "./components/Main/MainContainer";
+import DropDown from "./components/DropDown/DropDown";
+import DropDownContainer from "./components/DropDown/DropDownContainer";
 
 
-class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            items: []
-        }
-    }
-    componentDidMount() {
-        fetch("https://github.com/scandiweb/junior-react-endpoint/src/data");
-    }
+
+export class App extends PureComponent {
 
     render() {
+
         return (
             <div className="app-wrapper-content">
-                <HeaderContainer/>
+                <HeaderContainer />
                 <MainContainer />
-                {/*<Route path='/men' render={() => <Men/>}/>*/}
+                <DropDownContainer/>
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return this.state
-
-}
 
 export default App

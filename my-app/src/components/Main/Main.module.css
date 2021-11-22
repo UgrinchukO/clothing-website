@@ -1,4 +1,8 @@
+.productCategory {
+ width: 1140px;
+}
 .productCategory h1 {
+    height: 300px;
     color: rgba(29, 31, 34, 1);
     font-family: Raleway;
     font-style: normal;

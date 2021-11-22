@@ -4,6 +4,7 @@ import headerIconReboot from "./../../Image/headerImage/a-logo.png"
 import DropDown from "../DropDown/DropDown";
 import ModalBasket from "../ModalBasket/ModalBasket";
 import {NavLink} from "react-router-dom";
+import DropDownContainer from "../DropDown/DropDownContainer";
 
 
 class Header extends React.Component {
@@ -12,8 +13,7 @@ class Header extends React.Component {
         return (
             <header className={s.headerElement}>
                 <div className={s.categoryClothing}>
-                    <NavLink to={"/women"} className={s.firstElement} activeClassName={s.active}>Women</NavLink>
-                    {/*<span className={s.line} activeClassName={s.active}></span>*/}
+                    <NavLink to={"/women"} className={s.firstElement} activeClassName={s.active} >Women</NavLink>
                 </div>
                 <div className={s.categoryClothing}>
                     <NavLink to={'/men'} activeClassName={s.active}>Men</NavLink>
@@ -30,7 +30,6 @@ class Header extends React.Component {
                     <button className={s.iconDollar}>
                         $
                     </button>
-                    <DropDown/>
                     <ModalBasket/>
                 </div>
             </header>
