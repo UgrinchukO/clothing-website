@@ -1,0 +1,20 @@
+.wrapProducts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: space-between;
+    margin-left: 101px;
+}
+
+.value {
+    width: 386px;
+    height: 444px;
+    margin-right: 40px;
+}
+
+.value img  {
+    width: 354px;
+    height: 330px;
+}
+
