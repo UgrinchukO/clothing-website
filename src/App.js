@@ -5,6 +5,7 @@ import MainContainer from "./components/Main/MainContainer";
 import DropDown from "./components/DropDown/DropDown";
 import DropDownContainer from "./components/DropDown/DropDownContainer";
 import TextNameCategoryContainer from "./components/TextNameCategory/TextNameCategoryContainer";
+import Men from "./components/Men/Men";
 
 
 export class App extends PureComponent {
@@ -16,6 +17,7 @@ export class App extends PureComponent {
                 <HeaderContainer/>
                 <TextNameCategoryContainer/>
                 <MainContainer/>
+                <Men/>
             </div>
         )
     }

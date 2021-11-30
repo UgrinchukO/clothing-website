@@ -8,14 +8,18 @@ export default class Main extends PureComponent {
     render() {
         const GET_PRODUCTS = gql`
      query Query {
-         category {
+  category {
     products {
-      id
       gallery
-      description
+      name
+      id
+      prices {
+        currency
+        amount
+      }
     }
   }
-    }
+}
     `
         return <div className={s.wrapProducts}>
             <Query query={GET_PRODUCTS}>
@@ -24,12 +28,14 @@ export default class Main extends PureComponent {
                         return <p>Loading....</p>
                     }
 
-                    let {category, products} = data;
+                    let {category, products, prices} = data;
                     return category.products.map(product =>
                         <div className={s.value}>
-                            <img src={product.gallery} />
-                            <div>{product.description}</div>
+                            <img src={product.gallery}/>
+                            <p>{product.name}</p>
+                            <p>({product.prices.amount})</p>
                         </div>)
+
                 }
                 }
             </Query>
