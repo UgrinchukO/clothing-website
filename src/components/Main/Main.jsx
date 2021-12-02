@@ -29,12 +29,20 @@ export default class Main extends PureComponent {
                     }
 
                     let {category, products, prices} = data;
-                    return category.products.map(product =>
+
+                    return category.products.map(product => product.prices.map((price) =>
                         <div className={s.value}>
-                            <img src={product.gallery}/>
-                            <p>{product.name}</p>
-                            <p>({product.prices.amount})</p>
-                        </div>)
+                            {price.amount}
+                        </div>
+                        )
+                    )
+                    // return category.products.map(product =>
+                    //     <div className={s.value}>
+                    //         <img src={product.gallery}/>
+                    //         <p>{product.name}</p>
+                    //         return product.prices.map((price) =>
+                    //         <div>{price.currency}</div>)
+                    //     </div>)
 
                 }
                 }

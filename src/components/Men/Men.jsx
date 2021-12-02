@@ -6,17 +6,18 @@ import {Query} from "@apollo/client/react/components";
 export default class Men extends PureComponent {
     render() {
         const GET_PRODUCTS = gql`
-     query Query {
-  categories {
+     query Category {
+  category {
     products {
+    name
       prices {
+      amount
         currency
-        amount
       }
     }
   }
 }
-    `
+`
         return (
             <div className={s.categoryClothing}>
                 <Query query={GET_PRODUCTS}>
@@ -25,12 +26,16 @@ export default class Men extends PureComponent {
                             return <p>Loading....</p>
                         }
 
-                        let {categories, products} = data;
-                        return categories.products.map(product =>
-                            <div className={s.value}>
-                                <p>({product.prices.amount})</p>
-                            </div>)
+                        let {category, products, prices} = data;
 
+                        return category.products.map((product) => {
+                                return product.prices.map((price) =>
+                                <div>
+                                    {price.currency}
+                                    {price.amount}
+                                </div>)
+                            }
+                        )
                     }
                     }
                 </Query>

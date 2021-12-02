@@ -17,7 +17,7 @@ export class App extends PureComponent {
                 <HeaderContainer/>
                 <TextNameCategoryContainer/>
                 <MainContainer/>
-                <Men/>
+                {/*<Men/>*/}
             </div>
         )
     }
