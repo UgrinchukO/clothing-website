@@ -23,27 +23,23 @@ export default class Main extends PureComponent {
     `
         return <div className={s.wrapProducts}>
             <Query query={GET_PRODUCTS}>
-                {({loading, data}) => {
+                {({loading, data, valueId}) => {
                     if (loading) {
                         return <p>Loading....</p>
                     }
 
                     let {category, products, prices} = data;
 
-                    return category.products.map(product => product.prices.map((price) =>
+                    return category.products.map(product =>
                         <div className={s.value}>
-                            {price.amount}
-                        </div>
-                        )
+                            <img src={product.gallery}/>
+                            <p>{product.name}</p>
+                            <div className={s.priceProduct}>
+                                <p>{product.prices.find(price => price.currency === 'USD').currency}</p>
+                                <p>{product.prices.find(price => price.currency === 'USD').amount}</p>
+                            </div>
+                            </div>
                     )
-                    // return category.products.map(product =>
-                    //     <div className={s.value}>
-                    //         <img src={product.gallery}/>
-                    //         <p>{product.name}</p>
-                    //         return product.prices.map((price) =>
-                    //         <div>{price.currency}</div>)
-                    //     </div>)
-
                 }
                 }
             </Query>
